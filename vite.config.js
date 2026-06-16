@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// 커스텀 도메인(rest06.dreamitbiz.com)에 배포 → base 는 루트('/').
-// CNAME 은 public/ 에 두어 빌드 시 dist/ 로 복사한다.
+// GitHub Pages: magnetism9.github.io/006/ → base '/006/'
+// 커스텀 도메인 사용 시 VITE_BASE_URL=/ 로 오버라이드
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  base: process.env.VITE_BASE_URL ?? '/006/',
 })
